@@ -12,7 +12,7 @@ export default function PhoneInput ({ onChange, value, disabled }: { onChange: (
         defaultCountry='NG'
         value={value}
         disabled={disabled}
-        onChange={onChange}
+        onChange={(val) => val && onChange(val)}
       />
     </>
   )
