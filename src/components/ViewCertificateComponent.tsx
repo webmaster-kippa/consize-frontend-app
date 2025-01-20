@@ -74,7 +74,7 @@ export default function ViewCertificateComponent ({ details }: { details: DataIn
     let component = <div></div>
     switch (data.type) {
       case ComponentTypes.DATE:
-        component = <TextContent text={data.properties.text} border={data.properties.border} height={"auto"} width={data.properties.width || 100} />
+        component = <TextContent text={data.properties.text ? { ...data.properties.text, value: moment().format('Do MMMM, YYYY') } : undefined} border={data.properties.border} height={"auto"} width={data.properties.width || 100} />
         break
       case ComponentTypes.TEXT:
       case ComponentTypes.COURSE:
