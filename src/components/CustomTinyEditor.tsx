@@ -33,7 +33,7 @@ const CustomTinyMCEEditor: React.FC<TinyMCEEditorProps> = ({ aiOptionButtons = [
   const [sentences, setSentences] = useState<number>(0)
   const [isMobile, setIsMobile] = useState(false)
   const [currentAIAction, setCurrentAIAction] = useState<string | null>(null)
-  const [editorRef, setEditorRef] = useState<TinyMCEEditor | null>(null)
+  const [editorRef, setEditorRef] = useState<boolean>(false)
 
   useEffect(() => {
     // Function to be executed after the component has mounted
@@ -110,7 +110,7 @@ const CustomTinyMCEEditor: React.FC<TinyMCEEditorProps> = ({ aiOptionButtons = [
             </div>
             <Editor
               onInit={(evt, editor) => {
-                setEditorRef(editor)
+                setEditorRef(true)
               }}
               onEditorChange={(newVal, editor) => {
                 onChange(he.decode(newVal))
